@@ -1,5 +1,7 @@
 # README
 
+I'm using the https://tailwindcss.com/docs/guides/ruby-on-rails example instead of the one given on the tutorial as I found it easier to use
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
