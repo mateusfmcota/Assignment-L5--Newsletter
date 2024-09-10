@@ -1,0 +1,21 @@
+<div class="prose flex-col max-w-none flex w-full">
+  <h1> New Email </h1>
+
+  <%= form_with model: @email do |f| %>
+    <div class="mb-6">
+      <%= f.label :subject, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= f.text_field :subject, {class: "bg-sky-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"} %>
+    </div>
+  <!--  <div><%#= f.text_field :subject  %></div>-->
+    <div class="mb-6">
+      <%= f.label :body, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= f.text_area :body, {class: "bg-sky-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" } %>
+    </div>
+  <!--  <div><%#= f.text_area :body %></div>-->
+    <div class="mb-6">
+      <%= f.label :template, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= f.select :template, @templates.map { |t| [t.name, t.id ]}, {include_blank: "No template"}, {class: "bg-sky-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"} %>
+    </div>
+    <div><%= f.submit :send, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" %></div>
+  <% end %>
+</div>
